@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Clínico</title>
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+      padding-bottom: 70px; /* espaço pro rodapé fixo */
+    }
+
+    header {
+      background: #004d80;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .search-box {
+      margin: 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-box input {
+      width: 90%;
+      padding: 10px;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 14px;
+    }
+
+    .categorias {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 20px;
+    }
+
+    .categorias .item {
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px 10px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .categorias .item i {
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: #004d80;
+    }
+
+    .categorias .item span {
+      display: block;
+      font-size: 13px;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    .categorias .item:hover {
+      transform: translateY(-3px);
+      background: #e6f2ff;
+    }
+
+    .doutores {
+      margin: 20px;
+    }
+
+    .doutores h2 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #004d80;
+    }
+
+    .doutor {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: 0.2s;
+    }
+
+    .doutor:hover {
+      background: #f0f8ff;
+    }
+
+    .doutor img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    .doutor-info p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .doutor-info p:first-child {
+      font-weight: 600;
+      color: #222;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #004d80;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      color: #fff;
+      font-size: 13px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .footer div {
+      text-align: center;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .footer div i {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 3px;
+    }
+
+    .footer div.active {
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bem-vindo, Rianan Reis</h1>
+    <p>O que deseja fazer hoje?</p>
+  </header>
+
+  <div class="search-box">
+    <input type="text" placeholder="Pesquisar clínicas, exames, médicos...">
+  </div>
+
+  <section class="categorias">
+    <div class="item">
+      <i class="fa-solid fa-user-doctor"></i>
+      <span>Consultas</span>
+    </div>
+    <div class="item">
+      <i class="fa-solid fa-tooth"></i>
+      <span>Dentistas</span>
+    </div>
+    <div class="item">
+      <i class="fa-solid fa-heart-pulse"></i>
+      <span>Cardiologia</span>
+    </div>
+    <div class="item">
+      <i class="fa-solid fa-hospital"></i>
+      <span>Hospital</span>
+    </div>
+    <div class="item">
+      <i class="fa-solid fa-kit-medical"></i>
+      <span>Emergência</span>
+    </div>
+    <div class="item">
+      <i class="fa-solid fa-flask"></i>
+      <span>Exames</span>
+    </div>
+  </section>
+
+  <section class="doutores">
+    <h2>Alguns Doutores</h2>
+    <div class="doutor">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr.">
+      <div class="doutor-info">
+        <p>Dra. Marcia Pacheco</p>
+        <p>Clínica Geral</p>
+      </div>
+    </div>
+    <div class="doutor">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr.">
+      <div class="doutor-info">
+        <p>Dr. Roberto Fagundes</p>
+        <p>Cardiologista</p>
+      </div>
+    </div>
+    <div class="doutor">
+      <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dr.">
+      <div class="doutor-info">
+        <p>Dr. João Mendes</p>
+        <p>Dentista</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="active"><i class="fa-solid fa-user-doctor"></i>Doutores</div>
+    <div><i class="fa-solid fa-calendar-check"></i>Agendar</div>
+    <div><i class="fa-solid fa-user"></i>Perfil</div>
+  </div>
+
+</body>
+</html>
